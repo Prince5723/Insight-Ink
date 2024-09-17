@@ -19,9 +19,9 @@ function News({ category }) {
         duration: 1,
     });
 
-
+    //yeah, IK it is a bad practise to hardcode apiKeys
     var url =
-        `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=55bd8649913d4c87bf04785e7e8bbdca`;
+        `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=55bd8649913d4c87bf04785e7e8bbdca`
 
     useEffect(() => {
         async function fetchData() {
@@ -69,18 +69,18 @@ function News({ category }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
                 {articles.map((article, index) => (
-                    article.title && article.description && article.urlToImage && article.url ? (
-                        <NewsCard
-                            key={index}
-                            country={'in'}
-                            category={'general'}
-                            title={article.title}
-                            desc={article.description}
-                            img={article.urlToImage}
-                            fullArticle={article.url}
-                            className={'div-masker'}
-                        />
-                    ) : null
+
+                    <NewsCard
+                        key={index}
+                        country={'in'}
+                        category={'general'}
+                        title={article.title}
+                        desc={article.description}
+                        img={article.urlToImage}
+                        fullArticle={article.url}
+                        className={'div-masker'}
+                    />
+
                 ))}
 
             </div>
