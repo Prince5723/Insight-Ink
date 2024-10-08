@@ -21,7 +21,7 @@ function News({ category }) {
 
     //yeah, IK it is a bad practise to hardcode apiKeys
     var url =
-        `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=55bd8649913d4c87bf04785e7e8bbdca`
+        `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${process.env.NEWS_API_KEY}`
 
     useEffect(() => {
         async function fetchData() {
